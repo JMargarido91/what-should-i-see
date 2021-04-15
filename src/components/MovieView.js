@@ -2,20 +2,31 @@ import Hero from './Hero';
 import { useParams } from 'react-router-dom';
 import {useEffect, useState} from 'react';
 
+
 const MovieView = () => {
 
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [movieGenres, setMovieGenres] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=1e17d1ce4e262e481dcf01400724e434&language=en-US`)
     .then(response => response.json())
     .then(data => {
       setMovieDetails(data);
+      setMovieGenres([...data.genres])
       setIsLoading(false);
     })
   }, [id])
+
+  function generateGenres() {
+    return (
+      <>
+        {movieGenres.map((genre, id) => <li key={id}> {genre.name} </li>)}
+      </>
+    )
+  }
 
   function renderMovieDetails() {
     if (isLoading) {
@@ -40,6 +51,18 @@ const MovieView = () => {
                 <p className="lead">
                   {movieDetails.overview}
                 </p>
+                <h4>IMDB Rating: {movieDetails.vote_average}</h4>
+
+                {movieDetails.imdb_id &&
+                  <div>
+                    <a target="_blank" rel="noreferrer" href={`https://www.imdb.com/title/${movieDetails.imdb_id}`}>
+                      <button className="btn btn-warning my-2">Go to IMDB page</button>
+                    </a>
+                  </div>}
+                
+                <div>
+                  <h4>Genre:</h4> {generateGenres()}
+                </div>
               </div>
             </div>
           </div>
