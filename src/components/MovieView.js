@@ -51,14 +51,23 @@ const MovieView = () => {
                 <p className="lead">
                   {movieDetails.overview}
                 </p>
-                <h4>IMDB Rating: {movieDetails.vote_average}</h4>
+                <h4>TMDB Rating: {movieDetails.vote_average}<span className="fs-6">/10</span></h4>
+                <p>Ratings: {movieDetails.vote_count}</p>
 
-                {movieDetails.imdb_id &&
+                <div className="d-flex">
+
+                  <a target="_blank" rel="noreferrer" href={`https://www.themoviedb.org/movie/${movieDetails.id}`}>
+                      <button className="btn btn-info m-2">Go to TMDB page</button>
+                    </a>
+
+                    {movieDetails.imdb_id &&
                   <div>
                     <a target="_blank" rel="noreferrer" href={`https://www.imdb.com/title/${movieDetails.imdb_id}`}>
                       <button className="btn btn-warning my-2">Go to IMDB page</button>
                     </a>
                   </div>}
+
+                  </div>
                 
                 <div>
                   <h4>Genre:</h4> {generateGenres()}

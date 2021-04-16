@@ -1,8 +1,6 @@
 import Hero from './Hero'
 import {Link} from 'react-router-dom'
 
-// TMDB API KEY = 1e17d1ce4e262e481dcf01400724e434
-
 const MovieCard = ({movie}) => {
 
     let posterUrl = "http://placehold.jp/919191/ffffff/500x750.png?text=Image%20Not%20Available"
