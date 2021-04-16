@@ -9,6 +9,7 @@ const MovieView = () => {
   const [movieDetails, setMovieDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [movieGenres, setMovieGenres] = useState([]);
+  const [movieRelease, setMovieRelease] = useState('');
 
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=1e17d1ce4e262e481dcf01400724e434&language=en-US`)
@@ -16,6 +17,7 @@ const MovieView = () => {
     .then(data => {
       setMovieDetails(data);
       setMovieGenres([...data.genres])
+      setMovieRelease(data.release_date.substring(0,4));
       setIsLoading(false);
     })
   }, [id])
@@ -27,6 +29,16 @@ const MovieView = () => {
       </>
     )
   }
+
+  function generateRelease() {
+    return (
+      <>
+      {movieRelease !== "" && 
+      <span className="fs-5">({movieRelease})</span>}
+      </>
+    )
+  }
+  
 
   function renderMovieDetails() {
     if (isLoading) {
@@ -47,18 +59,18 @@ const MovieView = () => {
                 <img src={posterPath} alt="..." className="img-fluid shadow rounded" />
               </div>
               <div className="col-md-9">
-                <h2>{movieDetails.original_title}</h2>
+                <h2>{movieDetails.original_title} {generateRelease()}</h2>
                 <p className="lead">
                   {movieDetails.overview}
                 </p>
-                <h4>TMDB Rating: {movieDetails.vote_average}<span className="fs-6">/10</span></h4>
+
+                {movieDetails.vote_average > 0 && movieDetails.vote_count > 0 &&
+                <div>
+                <h4>Rating: {movieDetails.vote_average}<span className="fs-6">/10</span></h4>
                 <p>Ratings: {movieDetails.vote_count}</p>
+                </div>}
 
                 <div className="d-flex">
-
-                  <a target="_blank" rel="noreferrer" href={`https://www.themoviedb.org/movie/${movieDetails.id}`}>
-                      <button className="btn btn-info m-2">Go to TMDB page</button>
-                    </a>
 
                     {movieDetails.imdb_id &&
                   <div>
@@ -69,9 +81,11 @@ const MovieView = () => {
 
                   </div>
                 
+                {movieGenres.length > 0 &&
                 <div>
                   <h4>Genre:</h4> {generateGenres()}
-                </div>
+                </div>}
+
               </div>
             </div>
           </div>
