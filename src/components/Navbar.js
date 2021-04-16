@@ -54,7 +54,7 @@ const Navbar = ({searchText, setSearchText}) => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Search for a movie"
                 aria-label="Search"
                 value={searchText}
                 onChange={updateSearchText}
