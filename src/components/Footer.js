@@ -4,7 +4,7 @@ import logo from '../images/tmdb.svg'
 const Footer = () => {
 
     return (
-        <div className="bg-dark text-white py-3 footer-container">
+        <div className="bg-dark text-white py-3">
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-md-2 col-4 mx-auto text-center">
