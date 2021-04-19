@@ -7,6 +7,7 @@ import MovieView from './components/MovieView';
 import { Route, Switch } from 'react-router';
 import { useEffect, useState } from 'react';
 import NotFoundPage from './components/NotFoundPage';
+import Footer from './components/Footer';
 
 
 
@@ -28,7 +29,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="vh-100">
       <Navbar searchText={searchText} setSearchText={setSearchText} />
 
       <Switch>
@@ -46,6 +47,8 @@ function App() {
         <Route component={NotFoundPage} />
     
       </Switch>
+
+      <Footer/>
     </div>
   );
 }
