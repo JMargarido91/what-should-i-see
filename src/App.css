@@ -31,3 +31,23 @@
 .about-text {
     font-size: 1.5rem;
 }
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+.main-footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.home-container {
+    height: calc(100vh - 292px);
+}
