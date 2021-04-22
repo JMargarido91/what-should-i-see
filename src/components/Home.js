@@ -27,7 +27,7 @@ const Home = () => {
     return (
       <>
         <Hero text="What should I see?"/>
-        <div className="home-container" style={{ backgroundImage: `url(${image})` }}>
+        <div className="home-container">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 offset-lg-2 my-5">
