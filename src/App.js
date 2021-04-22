@@ -31,26 +31,24 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-      <Navbar searchText={searchText} setSearchText={setSearchText} />
+        <Navbar searchText={searchText} setSearchText={setSearchText} />
 
-      <Switch>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
 
-        <Route path="/" exact>
-          <Home/>
-        </Route>
+          <Route path="/about" component={AboutView} />
+          <Route path="/search">
+            <SearchView keyword={searchText} searchResults={searchResults} />
+          </Route>
+          <Route path="/movies/:id" component={MovieView} />
 
-        <Route path="/about" component={AboutView} />
-        <Route path="/search">
-          <SearchView keyword={searchText} searchResults={searchResults} />
-        </Route>
-        <Route path="/movies/:id" component={MovieView} />
-
-        <Route component={NotFoundPage} />
-    
-      </Switch>
+          <Route component={NotFoundPage} />
+        </Switch>
       </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }

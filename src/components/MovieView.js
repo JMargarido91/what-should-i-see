@@ -17,7 +17,7 @@ const MovieView = () => {
     .then(data => {
       setMovieDetails(data);
       setMovieGenres([...data.genres])
-      setMovieRelease(data.release_date.substring(0,4));
+      setMovieRelease(data.release_date.substring(0, 4));
       setIsLoading(false);
     })
   }, [id])

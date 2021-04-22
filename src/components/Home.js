@@ -26,22 +26,27 @@ const Home = () => {
 
     return (
       <>
-        <Hero text="What should I see?"/>
+        <Hero text="What should I see?" />
         <div className="home-container">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 offset-lg-2 my-5">
-              <p className="lead fw-bold mb-5 text-center">
-                Feeling tired of choosing a movie to see? That is all over! Just click the button and trust us!
-              </p>
-                <button className="btn btn-outline-danger w-100 py-5 fs-1 bg-dark text-white" onClick={handleClick}>What should I see?</button>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-8 offset-lg-2 my-5">
+                <p className="lead fw-bold mb-5 text-center">
+                  Feeling tired of choosing a movie to see? That is all over!
+                  Just click the button and trust us!
+                </p>
+                <button
+                  className="btn btn-outline-danger w-100 py-5 fs-1 bg-dark text-white"
+                  onClick={handleClick}
+                >
+                  What should I see?
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      
       </>
-    )
+    );
   }
 
 
