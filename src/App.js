@@ -29,7 +29,8 @@ function App() {
 
 
   return (
-    <div className="vh-100">
+    <div className="page-container">
+      <div className="content-wrap">
       <Navbar searchText={searchText} setSearchText={setSearchText} />
 
       <Switch>
@@ -47,6 +48,7 @@ function App() {
         <Route component={NotFoundPage} />
     
       </Switch>
+      </div>
 
       <Footer/>
     </div>

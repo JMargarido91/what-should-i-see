@@ -25,9 +25,10 @@ const Home = () => {
   }
 
     return (
-      <div className="vh-100" style={{ backgroundImage: `url(${image})` }}>
+      <>
         <Hero text="What should I see?"/>
-        <div className="container" >
+        <div className="home-container" style={{ backgroundImage: `url(${image})` }}>
+        <div className="container">
           <div className="row">
             <div className="col-lg-8 offset-lg-2 my-5">
               <p className="lead fw-bold mb-5 text-center">
@@ -38,6 +39,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
+      </>
     )
   }
 
