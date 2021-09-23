@@ -24,7 +24,7 @@ const AboutView = () => {
                     </button>
                     <div className="collapse" id="collapseWho">
                       <p>
-                        8 years into a Hotel Management career, my original area
+                        9 years into a Hotel Management career, my original area
                         of education, I now intend to align my management
                         experience with my newly found, but long anticipated,
                         passion for programming.
@@ -55,7 +55,7 @@ const AboutView = () => {
                         <div className="col-md-8 col-sm-12 mb-4"><h4>Programming Languages</h4>
                           <div className="container my-3">
                             <li>Java</li>
-                            <li>Python</li>
+                            <li>C#</li>
                             <li>Javascript and Typescript</li>
                           </div>
                         </div>
@@ -64,14 +64,14 @@ const AboutView = () => {
                             <li>Spring</li>
                             <li>Hibernate</li>
                             <li>Angular</li>
-                            <li>Reacto</li>
-                            <li>Django</li>
+                            <li>React</li>
                           </div>
                         </div>
                         <div className="col-md-8 col-sm-12 mb-4"><h4>SQL</h4>
                           <div className="container my-3">
                             <li>MySQL</li>
                             <li>PostgreSQL</li>
+                            <li>SQL Server</li>
                           </div>
                         </div>
                         <div className="col-md-4 col-sm-12 mb-4"><h4>Other</h4>
